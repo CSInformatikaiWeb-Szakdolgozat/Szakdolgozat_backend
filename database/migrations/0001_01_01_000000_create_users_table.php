@@ -19,18 +19,25 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('role')->default(0);
-            #role: 0 = user, 1 = admin
+            $table->integer('role')->default(0);
+            #role: 0 = user, 1 = Superadmin,2 = admin
             $table->rememberToken();
             $table->timestamps();
         });
 
         User::create([
+            'name'=>'Superadmin', 
+            'email'=> 'superadmin@admin.hu',
+            'password' => Hash::make('Superadmin12345'),
+            'role' => 1
+        ]);
+        User::create([
             'name'=>'admin', 
             'email'=> 'admin@admin.hu',
             'password' => Hash::make('admin12345'),
-            'role' => 1
+            'role' => 2
         ]);
+
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
