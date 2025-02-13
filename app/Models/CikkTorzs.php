@@ -16,4 +16,8 @@ class CikkTorzs extends Model
         'rovat',
         'status',
     ];
+    public function beszalito()
+    {
+        return $this->belongsTo(Beszalito::class);
+    }
 }

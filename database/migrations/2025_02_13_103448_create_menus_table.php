@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('egyeb_infos', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->unsignedBigInteger('main_menu')->nullable(); // A szülő menü referenciája
+            $table->string('link');
+            $table->boolean('status');
             $table->timestamps();
+             // Esetleg hozhatunk létre egy idegen kulcsot, ha biztosítjuk az integritást
+            $table->foreign('main_menu')->references('id')->on('menus')->onDelete('cascade');
         });
     }
 
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('egyeb_infos');
+        Schema::dropIfExists('menus');
     }
 };
