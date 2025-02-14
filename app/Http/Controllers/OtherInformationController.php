@@ -14,7 +14,7 @@ class OtherInformationController extends Controller
     }
     public function show($id)
     {
-        $otherInfos = response()->json(OtherInformation::all($id));
+        $otherInfos = response()->json(OtherInformation::find($id));
         return $otherInfos;
     }
     public function destroy($id)

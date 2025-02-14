@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('company_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->default('Winch Eszter');
             $table->string('description');
             $table->timestamps();
         });

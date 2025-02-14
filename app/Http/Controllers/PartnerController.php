@@ -14,7 +14,7 @@ class PartnerController extends Controller
     }
     public function show($id)
     {
-        $partners = response()->json(Partner::all($id));
+        $partners = response()->json(Partner::find($id));
         return $partners;
     }
     public function destroy($id)

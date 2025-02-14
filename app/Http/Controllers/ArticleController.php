@@ -15,7 +15,7 @@ class ArticleController extends Controller
     }
     public function show($id)
     {
-        $articles = response()->json(Article::all($id));
+        $articles = response()->json(Article::find($id));
         return $articles;
     }
     public function destroy($id)

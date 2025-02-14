@@ -14,7 +14,7 @@ class CompanyInfoController extends Controller
     }
     public function show($id)
     {
-        $companyInfo = response()->json(CompanyInfo::all($id));
+        $companyInfo = response()->json(CompanyInfo::find($id));
         return $companyInfo;
     }
     public function destroy($id)
