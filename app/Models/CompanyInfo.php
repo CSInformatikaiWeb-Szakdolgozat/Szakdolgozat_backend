@@ -10,6 +10,7 @@ class CompanyInfo extends Model
     /** @use HasFactory<\Database\Factories\CompanyInfoFactory> */
     use HasFactory;
     protected $fillable = [
+        'name',
         'description',
     ];
 }
