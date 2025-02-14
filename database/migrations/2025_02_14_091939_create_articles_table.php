@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cikk_torzs', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->foreignId('beszalito')->references('id')->on('beszalitos');
+            $table->foreignId('partner')->references('id')->on('partners');
             $table->string('rovat');
             $table->boolean('status');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cikk_torzs');
+        Schema::dropIfExists('articles');
     }
 };

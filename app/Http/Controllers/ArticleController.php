@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beszalito;
-use App\Models\CikkTorzs;
+use App\Models\Article;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
-class CikkTorzsController extends Controller
+class ArticleController extends Controller
 {
     public function create()
     {
-        $beszalitos = Beszalito::all();
+        $beszalitos = Partner::all();
         return view('admin.cikk.create', compact('beszalitos'));
     }
 
@@ -24,7 +24,7 @@ class CikkTorzsController extends Controller
             'status' => 'required|boolean',
         ]);
 
-        CikkTorzs::create($request->all());
+        Article::create($request->all());
 
         return redirect()->route('cikk.index');
     }

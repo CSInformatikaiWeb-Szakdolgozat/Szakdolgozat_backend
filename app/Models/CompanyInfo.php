@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Beszalito extends Model
+class CompanyInfo extends Model
 {
-    /** @use HasFactory<\Database\Factories\BeszalitoFactory> */
+    /** @use HasFactory<\Database\Factories\CompanyInfoFactory> */
     use HasFactory;
     protected $fillable = [
-        'name',
-        'status',
-        'page',
+        'description',
     ];
 }

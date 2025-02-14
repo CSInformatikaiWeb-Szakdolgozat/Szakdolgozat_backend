@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EgyebInfo extends Model
+class Partner extends Model
 {
-    /** @use HasFactory<\Database\Factories\EgyebInfoFactory> */
+    /** @use HasFactory<\Database\Factories\PartnerFactory> */
     use HasFactory;
     protected $fillable = [
         'name',
-        'description',
+        'status',
+        'page',
     ];
 }

@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ceg_infos', function (Blueprint $table) {
-            $table->string('name')->primary();
+        Schema::create('other_information', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
             $table->string('description');
             $table->timestamps();
         });
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ceg_infos');
+        Schema::dropIfExists('other_information');
     }
 };

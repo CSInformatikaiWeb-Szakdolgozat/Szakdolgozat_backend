@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CikkTorzs extends Model
+class Article extends Model
 {
-    /** @use HasFactory<\Database\Factories\CikkTorzsFactory> */
+    /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
     protected $fillable = [
         'name',
@@ -18,6 +18,6 @@ class CikkTorzs extends Model
     ];
     public function beszalito()
     {
-        return $this->belongsTo(Beszalito::class);
+        return $this->belongsTo(Partner::class);
     }
 }
