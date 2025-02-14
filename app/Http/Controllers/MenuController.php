@@ -9,27 +9,28 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $menus = Menu::all();
-        return view('admin.menus.index', compact('menus'));
+        $menus = response()->json(Menu::all());
+        return $menus;
     }
-
-    public function create()
+    public function show($id)
     {
-        $menus = Menu::whereNull('main_menu')->get(); // Csak a főmenü kategóriák
-        return view('admin.menus.create', compact('menus'));
+        $menus = response()->json(Menu::all($id));
+        return $menus;
     }
-
+    public function destroy($id)
+    {
+        Menu::find($id)->delete();
+    }
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'link' => 'required|url',
-            'main_menu' => 'nullable|exists:menus,id',
-            'status' => 'required|boolean',
-        ]);
-
-        Menu::create($request->all());
-
-        return redirect()->route('menus.index');
+        $menus = new Menu();
+        $menus->fill($request->all());
+        $menus->save();
+    }
+    public function update(Request $request, $id)
+    {
+        $menus = Menu::find($id);
+        $menus->fill($request->all());
+        $menus->save();
     }
 }

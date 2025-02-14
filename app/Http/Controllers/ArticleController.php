@@ -8,24 +8,30 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function create()
+    public function index()
     {
-        $beszalitos = Partner::all();
-        return view('admin.cikk.create', compact('beszalitos'));
+        $articles = response()->json(Article::all());
+        return $articles;
     }
-
+    public function show($id)
+    {
+        $articles = response()->json(Article::all($id));
+        return $articles;
+    }
+    public function destroy($id)
+    {
+        Article::find($id)->delete();
+    }
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'beszalito' => 'required|exists:beszalitos,id',
-            'rovat' => 'required|string|max:255',
-            'status' => 'required|boolean',
-        ]);
-
-        Article::create($request->all());
-
-        return redirect()->route('cikk.index');
+        $article = new Article();
+        $article->fill($request->all());
+        $article->save();
+    }
+    public function update(Request $request, $id)
+    {
+        $article = Article::find($id);
+        $article->fill($request->all());
+        $article->save();
     }
 }
