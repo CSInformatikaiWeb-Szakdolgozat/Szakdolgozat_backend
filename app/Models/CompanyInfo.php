@@ -10,7 +10,20 @@ class CompanyInfo extends Model
     /** @use HasFactory<\Database\Factories\CompanyInfoFactory> */
     use HasFactory;
     protected $fillable = [
-        'name',
-        'description',
+        'company_name',
+        'company_manager',
+        'c_email',
+        'c_telefon',
+        'premise',
+        'mailing_address',
+        'head_office',
+        'tax_number',
+        'trade_register',
+        'availability_email',
+        'availability_phone',
+        'report_email',
+        'report_phone',
+        'price_offer_email',
+        'google_map'
     ];
 }

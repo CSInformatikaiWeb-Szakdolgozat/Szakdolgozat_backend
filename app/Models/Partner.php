@@ -14,4 +14,5 @@ class Partner extends Model
         'status',
         'page',
     ];
+  
 }

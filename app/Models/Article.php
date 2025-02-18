@@ -12,12 +12,17 @@ class Article extends Model
     protected $fillable = [
         'name',
         'description',
-        'beszalito',
-        'rovat',
-        'status',
+        'partner',
+        'classification',
+        'visibility_status',
+        'page_link',
     ];
-    public function beszalito()
+    public function partner()
     {
-        return $this->belongsTo(Partner::class);
+        return $this->hasOne(Partner::class);
+    }
+    public function classification()
+    {
+        return $this->hasOne(Classification::class);
     }
 }
