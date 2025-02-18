@@ -20,21 +20,21 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('role')->default(0);
-            #role: 0 = user, 1 = Superadmin,2 = admin
+            #role: 0 = user, 1 = admin,2 = szerkesztő
             $table->rememberToken();
             $table->timestamps();
         });
 
         User::create([
-            'name'=>'Superadmin', 
-            'email'=> 'superadmin@admin.hu',
-            'password' => Hash::make('Superadmin12345'),
+            'name' => 'admin',
+            'email' => 'admin@admin.hu',
+            'password' => Hash::make('admin12345'),
             'role' => 1
         ]);
         User::create([
-            'name'=>'admin', 
-            'email'=> 'admin@admin.hu',
-            'password' => Hash::make('admin12345'),
+            'name' => 'editor',
+            'email' => 'editor@editor.hu',
+            'password' => Hash::make('editor12345'),
             'role' => 2
         ]);
 

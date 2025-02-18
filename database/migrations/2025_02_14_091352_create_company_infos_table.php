@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('company_name');
             $table->string('company_manager');
-            $table->string('c_email');
-            $table->string('c_telefon');
+            $table->string('cm_email');
+            $table->string('cm_telefon');
             $table->string('premise');
             $table->string('mailing_address');
             $table->string( 'head_office');
@@ -35,8 +35,8 @@ return new class extends Migration
         CompanyInfo::create([
             'company_name' => 'CSInfo',
             'company_manager' => 'Tar György István',
-            'c_email' => 'tar.gyorgy@csinfo.hu',
-            'c_telefon' => '+36 30 229 4079',
+            'cm_email' => 'tar.gyorgy@csinfo.hu',
+            'cm_telefon' => '+36 30 229 4079',
             'premise' => '1021 Budapest Széher út 13/a I/6',
             'mailing_address' => 'C.S. Informatikai Rendszerek Kft.',
             'head_office' => '1021 Budapest Széher út 13/a I/6',

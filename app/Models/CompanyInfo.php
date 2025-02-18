@@ -12,8 +12,8 @@ class CompanyInfo extends Model
     protected $fillable = [
         'company_name',
         'company_manager',
-        'c_email',
-        'c_telefon',
+        'cm_email',
+        'cm_telefon',
         'premise',
         'mailing_address',
         'head_office',
