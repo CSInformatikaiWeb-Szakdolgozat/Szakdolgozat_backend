@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Article;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,6 +22,15 @@ return new class extends Migration
             $table->string('page_link');
             $table->timestamps();
         });
+
+        Article::create([
+            'name'=>'',
+            'description'=>'',
+            'partner'=>'',
+            'classification'=>'',
+            'visibility_status'=>true,
+            'page_link'=>'',
+        ]);
     }
 
     /**
