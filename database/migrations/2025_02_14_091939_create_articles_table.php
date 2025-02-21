@@ -23,14 +23,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Article::create([
-            'name'=>'',
-            'description'=>'',
-            'partner'=>'',
-            'classification'=>'',
-            'visibility_status'=>true,
-            'page_link'=>'',
-        ]);
+
     }
 
     /**
