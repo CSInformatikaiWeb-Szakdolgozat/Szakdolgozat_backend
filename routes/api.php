@@ -11,8 +11,14 @@ use App\Http\Middleware\Editor;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
+
 // bejelentkezett admin usernek engedélyezett műveletek.
-Route::middleware(['auth:sanctum', Admin::class])->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum', Admin::class])->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
     //Cikkekel való műveletek
     //összes cikk megjelenítése
     Route::get('/articles', [ArticleController::class, 'index']);
@@ -90,11 +96,13 @@ Route::middleware(['auth:sanctum', Admin::class])->get('/user', function (Reques
     Route::delete('/user/{id}', [UserController::class, 'destroy']);
     //egy adott felhasználó szerkesztése
     Route::patch('/user/{id}', [UserController::class, 'update']);
-    return $request->user();
 });
 
 //bejelentkezett szerkesztő usernek engenyélyezet műveletek.
-Route::middleware(['auth:sanctum', Editor::class])->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum', Editor::class])->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
     //Cikkekel való műveletek
     //összes cikk megjelenítése
     Route::get('/articles', [ArticleController::class, 'index']);
@@ -160,8 +168,6 @@ Route::middleware(['auth:sanctum', Editor::class])->get('/user', function (Reque
     Route::delete('/class/{id}', [ClassificationController::class, 'destroy']);
     //egy adott besorolás szerkesztése
     Route::patch('/class/{id}', [ClassificationController::class, 'update']);
-
-    return $request->user();
 });
 
 // Route::get('/articles', [ArticleController::class, 'index']);

@@ -13,6 +13,14 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, HasApiTokens, Notifiable;
 
+    public function isAdmin()  {
+        return $this->role === 1;
+    }
+    public function isEditor()  {
+        return $this->role === 2;
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *
