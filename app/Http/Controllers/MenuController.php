@@ -11,29 +11,31 @@ class MenuController extends Controller
     {
         $menus = response()->json(Menu::all());
         return $menus;
+        redirect()->back();
     }
     public function show($id)
     {
         $menus = response()->json(Menu::find($id));
         return $menus;
+        redirect()->back();
     }
     public function destroy($id)
     {
         Menu::find($id)->delete();
-        return redirect()->back();
+        redirect()->back();
     }
     public function store(Request $request)
     {
         $menus = new Menu();
         $menus->fill($request->all());
         $menus->save();
-        return redirect()->back();
+        redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $menus = Menu::find($id);
         $menus->fill($request->all());
         $menus->save();
-        return redirect()->back();
+        redirect()->back();
     }
 }

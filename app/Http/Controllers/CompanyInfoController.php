@@ -11,29 +11,31 @@ class CompanyInfoController extends Controller
     {
         $companyInfo = response()->json(CompanyInfo::all());
         return $companyInfo;
+        redirect()->back();
     }
     public function show($id)
     {
         $companyInfo = response()->json(CompanyInfo::find($id));
         return $companyInfo;
+        redirect()->back();
     }
     public function destroy($id)
     {
         CompanyInfo::find($id)->delete();
-        return redirect()->back();
+        redirect()->back();
     }
     public function store(Request $request)
     {
         $companyInfo = new CompanyInfo();
         $companyInfo->fill($request->all());
         $companyInfo->save();
-        return redirect()->back();
+        redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $companyInfo = CompanyInfo::find($id);
         $companyInfo->fill($request->all());
         $companyInfo->save();
-        return redirect()->back();
+        redirect()->back();
     }
 }
