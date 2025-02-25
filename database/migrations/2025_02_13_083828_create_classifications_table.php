@@ -19,6 +19,7 @@ return new class extends Migration
             // Esetleg hozhatunk létre egy idegen kulcsot, ha biztosítjuk az integritást
             $table->foreign('upper_classification')->references('id')->on('classifications')->onDelete('cascade');
         });
+        
     }
 
     /**

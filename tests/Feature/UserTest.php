@@ -8,13 +8,15 @@ test('example', function () {
 
     $response->assertStatus(200);
 });
-test('editorCreate', function () {
-    $admin = User::factory()->create([
+test('adminGetUser', function () {
+    $admin = User::find(1);
+    $editor = User::factory()->create([
         'role' => 2,
     ]);
-    $response = $this->actingAs($admin)->get('/api/user/' . $admin->id);
+    $response = $this->actingAs($admin)->get('/api/user/' . $editor->id);
     $response->assertStatus(200);
 });
+
 test('editorAutentikaltMenuPatch', function () {
     $menu = Menu::factory()->create([
         'name' => 'teszt név',

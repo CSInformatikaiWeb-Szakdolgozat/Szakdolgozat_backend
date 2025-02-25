@@ -34,4 +34,6 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->save();
     }
+
+
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PartnerController extends Controller
 {
