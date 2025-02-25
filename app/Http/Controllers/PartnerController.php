@@ -21,17 +21,20 @@ class PartnerController extends Controller
     public function destroy($id)
     {
         Partner::find($id)->delete();
+        return redirect()->back();
     }
     public function store(Request $request)
     {
         $partners = new Partner();
         $partners->fill($request->all());
         $partners->save();
+        return redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $partners = Partner::find($id);
         $partners->fill($request->all());
         $partners->save();
+        return redirect()->back();
     }
 }

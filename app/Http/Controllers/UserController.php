@@ -20,6 +20,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
+        return redirect()->back();
     }
     public function store(Request $request)
     {
@@ -27,11 +28,13 @@ class UserController extends Controller
         $user->role = 2;
         $user->fill($request->all());
         $user->save();
+        return redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $users = User::find($id);
         $users->fill($request->all());
         $users->save();
+        return redirect()->back();
     }
 }

@@ -20,17 +20,20 @@ class MenuController extends Controller
     public function destroy($id)
     {
         Menu::find($id)->delete();
+        return redirect()->back();
     }
     public function store(Request $request)
     {
         $menus = new Menu();
         $menus->fill($request->all());
         $menus->save();
+        return redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $menus = Menu::find($id);
         $menus->fill($request->all());
         $menus->save();
+        return redirect()->back();
     }
 }

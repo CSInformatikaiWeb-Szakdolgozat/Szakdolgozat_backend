@@ -20,17 +20,20 @@ class CompanyInfoController extends Controller
     public function destroy($id)
     {
         CompanyInfo::find($id)->delete();
+        return redirect()->back();
     }
     public function store(Request $request)
     {
         $companyInfo = new CompanyInfo();
         $companyInfo->fill($request->all());
         $companyInfo->save();
+        return redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $companyInfo = CompanyInfo::find($id);
         $companyInfo->fill($request->all());
         $companyInfo->save();
+        return redirect()->back();
     }
 }
