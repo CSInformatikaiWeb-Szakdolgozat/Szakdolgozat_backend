@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('cm_telefon');
             $table->string('premise');
             $table->string('mailing_address');
-            $table->string( 'head_office');
+            $table->string('head_office');
             $table->string('tax_number');
             $table->string('trade_register');
             $table->string('availability_email');
