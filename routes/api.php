@@ -170,6 +170,8 @@ Route::middleware(['auth:sanctum', Editor::class])->group(function () {
     Route::patch('/class/{id}', [ClassificationController::class, 'update']);
 });
 
+Route::get('/menus', [MenuController::class, 'index']);
+
 // Route::get('/articles', [ArticleController::class, 'index']);
 // Route::get('/article/{id}', [ArticleController::class, 'show']);
 // Route::post('/article', [ArticleController::class, 'store']);

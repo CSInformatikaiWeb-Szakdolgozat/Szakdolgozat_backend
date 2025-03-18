@@ -24,27 +24,35 @@ return new class extends Migration
         });
         Menu::create([
             'id' => 1,
+            'name' => 'Cégbemutató',
+            'main_menu' => null,
+            'link' => '/bemutato',
+            'status' => 1,
+        ]);
+
+        Menu::create([
+            'id' => 3,
             'name' => 'Virtualizáció',
             'main_menu' => null,
             'link' => '/virtualizacio',
             'status' => 1,
         ]);
         Menu::create([
-            'id' => 2,
+            'id' => 4,
             'name' => 'Szerverkonszolidáció',
             'main_menu' => null,
             'link' => '/szerverkonszolidacio',
             'status' => 1,
         ]);
         Menu::create([
-            'id' => 3,
+            'id' => 5,
             'name' => 'Tároló konszolidáció',
             'main_menu' => null,
             'link' => '/taroloKonszolidacio',
             'status' => 1,
         ]);
         Menu::create([
-            'id' => 4,
+            'id' => 6,
             'name' => 'Megoldások',
             'main_menu' => null,
             'link' => '/megoldasok',
@@ -75,7 +83,7 @@ return new class extends Migration
             'status' => 1,
         ]);
         Menu::create([
-            'id'=>9,
+            'id'=>11,
             'name' => 'Deszktop virtualizáció',
             'main_menu' => 4,
             'link' => '/deszktopVirtualizacio',
@@ -100,21 +108,21 @@ return new class extends Migration
         ]);
 
         Menu::create([
-            'id' => 5,
+            'id' => 15,
             'name' => 'Szolgáltatások ',
             'main_menu' => null,
             'link' => '/szolgaltatasok',
             'status' => 1,
         ]);
         Menu::create([
-            'id' => 6,
+            'id' => 16,
             'name' => 'Termékek ',
             'main_menu' => null,
             'link' => '/termekek',
             'status' => 1,
         ]);
         Menu::create([
-            'id' => 7,
+            'id' => 17,
             'name' => 'Letöltések ',
             'main_menu' => null,
             'link' => '/letoltesek',
