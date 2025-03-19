@@ -23,21 +23,18 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         Article::find($id)->delete();
-        redirect()->back();
     }
     public function store(Request $request)
     {
         $article = new Article();
         $article->fill($request->all());
         $article->save();
-        redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $article = Article::find($id);
         $article->fill($request->all());
         $article->save();
-        redirect()->back();
     }
 
 

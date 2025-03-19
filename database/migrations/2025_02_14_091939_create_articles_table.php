@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->foreignId('partner')->references('id')->on('partners');
             $table->foreignId('classification')->references('id')->on('classifications');
+            $table->longText('content');
             $table->boolean('visibility_status');
             $table->string('page_link');
             $table->timestamps();
