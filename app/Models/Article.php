@@ -14,6 +14,7 @@ class Article extends Model
         'description',
         'partner',
         'classification',
+        'content',
         'visibility_status',
         'page_link',
     ];

@@ -12,13 +12,11 @@ class ArticleController extends Controller
     {
         $articles = response()->json(Article::all());
         return $articles;
-        redirect()->back();
     }
     public function show($id)
     {
         $articles = response()->json(Article::find($id));
         return $articles;
-        redirect()->back();
     }
     public function destroy($id)
     {
