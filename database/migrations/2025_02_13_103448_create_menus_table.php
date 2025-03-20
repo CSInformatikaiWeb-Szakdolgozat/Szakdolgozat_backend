@@ -60,49 +60,49 @@ return new class extends Migration
         ]);
         Menu::create([
             'name' => 'LENOVO Flex technológia',
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/lenovoFlexTechnologia',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'IBM FlashSystem® Cyber Vault',
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/ibmFlashSystemCyberVault',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'IBM Tároló technológia',
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/ibmTaroloTechnologia',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'Szerver virtualizáció',
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/szerverVirtualizacio',
             'status' => 1,
         ]);
         Menu::create([
             'id'=>11,
             'name' => 'Deszktop virtualizáció',
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/deszktopVirtualizacio',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'Microsoft RDS',
-            'main_menu' => 9,
+            'main_menu' => 10,
             'link' => '/microsoftRds',
             'status' => 1,
         ]);     Menu::create([
             'name' => 'VMware View',
-            'main_menu' => 9,
+            'main_menu' => 10,
             'link' => '/vMwareView',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'Alkalmazás Virtualizáció',
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/alkalmazasVirtualizacio',
             'status' => 1,
         ]);
@@ -127,6 +127,13 @@ return new class extends Migration
             'main_menu' => null,
             'link' => '/letoltesek',
             'status' => 1,
+        ]);
+        Menu::create([
+            'id' => 18,
+            'name' => 'Cikkek',
+            'main_menu' => null,
+            'link' => '/cikkek',
+            'status' => 1
         ]);
     }
 
