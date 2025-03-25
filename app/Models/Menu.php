@@ -11,6 +11,7 @@ class Menu extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'szint',
         'main_menu',
         'link',
         'status'
