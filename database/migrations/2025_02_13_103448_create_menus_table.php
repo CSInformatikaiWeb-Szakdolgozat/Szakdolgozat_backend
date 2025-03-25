@@ -147,6 +147,13 @@ return new class extends Migration
             'link' => '/letoltesek',
             'status' => 1,
         ]);
+        Menu::create([
+            'id' => 18,
+            'name' => 'Cikkek',
+            'main_menu' => null,
+            'link' => '/cikkek',
+            'status' => 1
+        ]);
     }
 
     /**

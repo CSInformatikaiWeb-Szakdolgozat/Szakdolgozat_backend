@@ -11,18 +11,15 @@ class UserController extends Controller
     {
         $users = response()->json(User::all());
         return $users;
-        redirect()->back();
     }
     public function show($id)
     {
         $users = response()->json(User::find($id));
         return $users;
-        redirect()->back();
     }
     public function destroy($id)
     {
         User::find($id)->delete();
-        redirect()->back();
     }
     public function store(Request $request)
     {
@@ -30,13 +27,11 @@ class UserController extends Controller
         $user->role = 2;
         $user->fill($request->all());
         $user->save();
-        redirect()->back();
     }
     public function update(Request $request, $id)
     {
         $users = User::find($id);
         $users->fill($request->all());
         $users->save();
-        redirect()->back();
     }
 }
