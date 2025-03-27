@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('szint')->default(0);
+            $table->integer('szint')->default(0); // 0 = főmenü; 1 = dropdown; 2 = dropdown-item; 3 = dropdown-hoz tartozó dropdown
             $table->unsignedBigInteger('main_menu')->nullable(); // A szülő menü referenciája
             $table->string('link');
             $table->boolean('status');
@@ -67,43 +67,43 @@ return new class extends Migration
         Menu::create([
             'name' => 'LENOVO Flex technológia',
             'szint' => 2,
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/lenovoFlexTechnologia',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'IBM FlashSystem® Cyber Vault',
             'szint' => 2,
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/ibmFlashSystemCyberVault',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'IBM Tároló technológia',
             'szint' => 2,
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/ibmTaroloTechnologia',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'Szerver virtualizáció',
             'szint' => 2,
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/szerverVirtualizacio',
             'status' => 1,
         ]);
         Menu::create([
             'id'=>11,
             'name' => 'Deszktop virtualizáció',
-            'szint' => 1,
-            'main_menu' => 4,
+            'szint' => 3,
+            'main_menu' => 5,
             'link' => '/deszktopVirtualizacio',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'Microsoft RDS',
             'szint' => 2,
-            'main_menu' => 9,
+            'main_menu' => 10,
             'link' => '/microsoftRds',
             'status' => 1,
         ]);     
@@ -111,14 +111,14 @@ return new class extends Migration
         Menu::create([
             'name' => 'VMware View',
             'szint' => 2,
-            'main_menu' => 9,
+            'main_menu' => 10,
             'link' => '/vMwareView',
             'status' => 1,
         ]);
         Menu::create([
             'name' => 'Alkalmazás Virtualizáció',
             'szint' => 2,
-            'main_menu' => 4,
+            'main_menu' => 5,
             'link' => '/alkalmazasVirtualizacio',
             'status' => 1,
         ]);
