@@ -32,6 +32,12 @@ return new class extends Migration
             'upper_classification' => 1,
             'name' => 'LENOVO Flex szerver'
         ]);
+
+        Classification::create([
+            'id' => 3,
+            'upper_classification' => 1,
+            'name' => 'LENOVO Rack szerver'
+        ]);
     }
 
     /**

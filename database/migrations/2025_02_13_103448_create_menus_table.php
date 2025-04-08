@@ -150,8 +150,18 @@ return new class extends Migration
         Menu::create([
             'id' => 18,
             'name' => 'Cikkek',
+            'level' => 0,
             'main_menu' => null,
             'link' => '/cikkek',
+            'status' => 1
+        ]);
+
+        Menu::create([
+            'id' => 19,
+            'name' => 'LENOVO Rack szerverek',
+            'level' => 1,
+            'main_menu' => 15,
+            'link' => '/lenovo_rack_szerverek',
             'status' => 1
         ]);
     }
