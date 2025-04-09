@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClassificationController;
 use App\Http\Controllers\CompanyInfoController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\UserController;
@@ -57,15 +58,15 @@ Route::middleware(['auth:sanctum', Admin::class])->group(function () {
 
     //Event-ekkel való műveletek
     //összes event megjelenítése
-    Route::get('/events', [Event::class, 'index']);
+    Route::get('/events', [EventController::class, 'index']);
     //egy event megjelenítése
-    Route::get('/event/{id}', [Event::class, 'show']);
+    Route::get('/event/{id}', [EventController::class, 'show']);
     // egy új event létrehozása
-    Route::post('/event', [Event::class, 'store']);
+    Route::post('/event', [EventController::class, 'store']);
     //egy adott event törlése
-    Route::delete('/event/{id}', [Event::class, 'destroy']);
+    Route::delete('/event/{id}', [EventController::class, 'destroy']);
     //egy adott event szerkesztése
-    Route::patch('/event/{id}', [Event::class, 'update']);
+    Route::patch('/event/{id}', [EventController::class, 'update']);
 
     //Céginfókkal való műveletek
     //összes céginfó megjelenítése
@@ -141,15 +142,15 @@ Route::middleware(['auth:sanctum', Editor::class])->group(function () {
 
     //Event-ekkel való műveletek
     //összes event megjelenítése
-    Route::get('/events', [Event::class, 'index']);
+    Route::get('/events', [EventController::class, 'index']);
     //egy event megjelenítése
-    Route::get('/event/{id}', [Event::class, 'show']);
+    Route::get('/event/{id}', [EventController::class, 'show']);
     // egy új event létrehozása
-    Route::post('/event', [Event::class, 'store']);
+    Route::post('/event', [EventController::class, 'store']);
     //egy adott event törlése
-    Route::delete('/event/{id}', [Event::class, 'destroy']);
+    Route::delete('/event/{id}', [EventController::class, 'destroy']);
     //egy adott event szerkesztése
-    Route::patch('/event/{id}', [Event::class, 'update']);
+    Route::patch('/event/{id}', [EventController::class, 'update']);
 
     //Céginfókkal való műveletek
     //összes céginfó megjelenítése
