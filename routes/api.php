@@ -68,12 +68,18 @@ Route::middleware(['auth:sanctum', Admin::class])->group(function () {
     //egy adott event szerkesztése
     Route::patch('/event/{id}', [EventController::class, 'update']);
 
-    //Céginfókkal való műveletek
+   //Céginfókkal való műveletek
     //összes céginfó megjelenítése
     Route::get('/companyinfos', [CompanyInfoController::class, 'index']);
+     //egy céginfó megjelenítése
+     Route::get('/companyinfo/{id}', [CompanyInfoController::class, 'show']);
+     // egy új ceginfó létrehozása
+     Route::post('/companyinfo', [CompanyInfoController::class, 'store']);
+     //egy adott céginfó törlése
+     Route::delete('/companyinfo/{id}', [CompanyInfoController::class, 'destroy']);
     //egy adott céginfó szerkesztése
     Route::patch('/companyinfo/{id}', [CompanyInfoController::class, 'update']);
-
+    
     //Besorolással való műveletek
     //összes besorolás megjelenítése
     Route::get('/classes', [ClassificationController::class, 'index']);
@@ -155,6 +161,12 @@ Route::middleware(['auth:sanctum', Editor::class])->group(function () {
     //Céginfókkal való műveletek
     //összes céginfó megjelenítése
     Route::get('/companyinfos', [CompanyInfoController::class, 'index']);
+     //egy céginfó megjelenítése
+     Route::get('/companyinfo/{id}', [CompanyInfoController::class, 'show']);
+     // egy új ceginfó létrehozása
+     Route::post('/companyinfo', [CompanyInfoController::class, 'store']);
+     //egy adott céginfó törlése
+     Route::delete('/companyinfo/{id}', [CompanyInfoController::class, 'destroy']);
     //egy adott céginfó szerkesztése
     Route::patch('/companyinfo/{id}', [CompanyInfoController::class, 'update']);
 
@@ -199,6 +211,9 @@ Route::get('/articles', [ArticleController::class, 'index']);
 // Route::patch('/event/{id}', [Event::class, 'update']);
 
 // Route::get('/companyinfos', [CompanyInfoController::class, 'index']);
+// Route::get('/companyinfo/{id}', [CompanyInfoController::class, 'show']);
+// Route::post('/companyinfo', [CompanyInfoController::class, 'store']);
+// Route::delete('/companyinfo/{id}', [CompanyInfoController::class, 'destroy']);
 // Route::patch('/companyinfo/{id}', [CompanyInfoController::class, 'update']);
 
 // Route::get('/classes', [ClassificationController::class, 'index']);
